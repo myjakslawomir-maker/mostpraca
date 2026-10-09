@@ -1,4 +1,6 @@
+import { ContactDetails } from "./ContactDetails";
 import Link from "next/link";
+import { PartnerSection } from "./PartnerSection";
 import { InquiryForm } from "./InquiryForm";
 import { CookieNotice } from "./CookieNotice";
 
@@ -13,7 +15,7 @@ const copy = {
     formIntro: "Beschreiben Sie Ihren Bedarf kurz. Wir melden uns, um offene Fragen zu klären.",
     focusTag: "Gewerke", focusTitle: "Für verschiedene Arbeiten",
     focus: "Wir suchen nach Betrieben für den konkreten Auftrag. Dazu gehören unter anderem:",
-    pills: ["Sanitär & Heizung", "Elektrotechnik", "Klima & Lüftung", "Photovoltaik", "Bau & Ausbau", "Weitere Gewerke"],
+    pills: ["Sanitär & Heizung", "Elektrotechnik", "Klima & Lüftung", "Photovoltaik", "Bau & Ausbau", "Transport"],
     processTag: "Ablauf", processTitle: "Von der Anfrage zum Kontakt",
     steps: [
       ["Anfrage besprechen", "Wir klären Arbeiten, Einsatzort, Termin und benötigte Teamgröße."],
@@ -25,14 +27,14 @@ const copy = {
     criteria: [
       ["Leistungsumfang", "Genaue Tätigkeiten, Fachgebiet und Abgrenzung zu anderen Gewerken."],
       ["Einsatz", "Ort, Starttermin, Dauer, Projektgröße und Anzahl der Einsatzorte."],
-      ["Team & Ausstattung", "Personal, Sprachen, Fahrzeuge, Werkzeug und erforderliche Ausrüstung."],
+      ["Team & Ausstattung", "Personal, eine deutschsprachige Kontaktperson, Fahrzeuge, Werkzeug und erforderliche Ausrüstung."],
       ["Nachweise", "Referenzen, Versicherung, Registrierung und geforderte Qualifikationen."],
     ],
     feesTag: "Kosten", feesTitle: "Was wann kostet",
     feeItems: [
       ["0 €", "Erster Kontakt", "Sie schildern den Bedarf und wir klären die ersten Fragen. Unverbindlich."],
       ["250 € netto", "Größere Suche", "Nur bei gesondertem Auftrag: detaillierte Analyse, Suche, Prüfung und Vorstellung."],
-      ["5 %", "Bei Erfolg", "Vom Nettowert des ersten Auftrags, wenn aus der Vorstellung ein Auftrag entsteht."],
+      ["8 %", "Bei Erfolg", "Vom vereinbarten Nettowert der tatsächlich ausgeführten und bezahlten Leistungen des ersten vermittelten Auftrags."],
     ],
     feesNote: "Wer zahlt, Leistungsumfang und Fälligkeit vereinbaren wir vor der Weitergabe von Kontaktdaten schriftlich.",
     fine: "Ein Projektvertrag entsteht nur durch gesonderte Vereinbarung zwischen den beteiligten Unternehmen.",
@@ -48,7 +50,7 @@ const copy = {
     formIntro: "Describe the job briefly. We will get in touch to clarify any questions.",
     focusTag: "Trades", focusTitle: "Different kinds of work",
     focus: "We search for companies according to the job. Examples include:",
-    pills: ["Plumbing & heating", "Electrical", "HVAC", "Solar PV", "Construction & fit-out", "Other trades"],
+    pills: ["Plumbing & heating", "Electrical", "HVAC", "Solar PV", "Construction & fit-out", "Transport"],
     processTag: "Process", processTitle: "From inquiry to contact",
     steps: [
       ["Discuss the job", "We confirm the work, location, dates and crew size."],
@@ -60,14 +62,14 @@ const copy = {
     criteria: [
       ["Scope", "Exact tasks, trade and boundaries with other contractors."],
       ["Project", "Location, start date, duration, project size and number of sites."],
-      ["Team & equipment", "Crew, languages, vehicles, tools and required equipment."],
+      ["Team & equipment", "Crew, a German-speaking contact person for German-language projects, vehicles, tools and required equipment."],
       ["Evidence", "References, insurance, registration and required qualifications."],
     ],
     feesTag: "Fees", feesTitle: "What costs apply",
     feeItems: [
       ["€0", "First contact", "Tell us what you need and discuss the initial questions. No obligation."],
       ["€250 net", "Larger search", "Only when commissioned separately: detailed analysis, search, checks and introduction."],
-      ["5%", "On success", "Of the first assignment's net value if the introduction leads to that assignment."],
+      ["8%", "On success", "Of the agreed net value of work actually completed and paid for under the first introduced assignment."],
     ],
     feesNote: "We agree who pays, the scope and payment dates in writing before sharing contact details.",
     fine: "The companies enter into any project contract directly and by separate agreement.",
@@ -83,7 +85,7 @@ const copy = {
     formIntro: "Opisz zlecenie w kilku zdaniach. Skontaktujemy się, żeby ustalić szczegóły.",
     focusTag: "Branże", focusTitle: "Różne rodzaje prac",
     focus: "Szukamy firm pod konkretne zlecenie, między innymi w tych obszarach:",
-    pills: ["Hydraulika i ogrzewanie", "Elektryka", "Klimatyzacja i wentylacja", "Fotowoltaika", "Budownictwo", "Inne branże"],
+    pills: ["Hydraulika i ogrzewanie", "Elektryka", "Klimatyzacja i wentylacja", "Fotowoltaika", "Budownictwo", "Transport"],
     processTag: "Przebieg", processTitle: "Od zapytania do kontaktu",
     steps: [
       ["Omawiamy zlecenie", "Ustalamy zakres prac, miejsce, termin i liczbę potrzebnych osób."],
@@ -95,14 +97,14 @@ const copy = {
     criteria: [
       ["Zakres", "Konkretne prace, specjalizację i podział obowiązków między wykonawcami."],
       ["Zlecenie", "Miejsce, datę rozpoczęcia, czas trwania, wielkość projektu i liczbę lokalizacji."],
-      ["Ekipę i sprzęt", "Liczbę osób, języki, pojazdy, narzędzia i wymagane wyposażenie."],
+      ["Ekipę i sprzęt", "Liczbę osób, kontakt po niemiecku dla projektów niemieckojęzycznych, pojazdy, narzędzia i wymagane wyposażenie."],
       ["Dokumenty", "Referencje, ubezpieczenie, rejestrację firmy i potrzebne uprawnienia."],
     ],
     feesTag: "Opłaty", feesTitle: "Kiedy pojawia się koszt",
     feeItems: [
       ["0 EUR", "Pierwszy kontakt", "Opisujesz potrzebę i omawiamy pierwsze pytania. Bez zobowiązań."],
       ["250 EUR netto", "Większe poszukiwanie", "Tylko przy osobnym zleceniu: szczegółowa analiza, szukanie, sprawdzenie i przedstawienie firmy."],
-      ["5%", "Po zleceniu", "Od wartości netto pierwszego zlecenia, jeśli doszło do niego dzięki połączeniu firm."],
+      ["8%", "Po zleceniu", "Od uzgodnionej wartości netto wykonanych i opłaconych prac w pierwszym pozyskanym zleceniu."],
     ],
     feesNote: "Płatnika, zakres usługi i termin zapłaty ustalamy na piśmie przed przekazaniem danych kontaktowych.",
     fine: "Umowę na wykonanie projektu firmy zawierają bezpośrednio między sobą.",
@@ -141,6 +143,7 @@ export function BusinessPage({ locale }: { locale: Locale }) {
         <aside id="inquiry" className="inquiry-card" aria-labelledby="inquiry-heading">
           <div className="card-topline"><span>{t.formTag}</span></div>
           <h2 id="inquiry-heading">{t.formTitle}</h2><p>{t.formIntro}</p>
+          <ContactDetails/>
           <InquiryForm locale={locale}/>
         </aside>
       </section>
@@ -161,8 +164,9 @@ export function BusinessPage({ locale }: { locale: Locale }) {
         <div className="fee-grid">{t.feeItems.map(([amount, label, detail]) => <article className="fee-card" key={label}><strong>{amount}</strong><h3>{label}</h3><p>{detail}</p></article>)}</div>
         <p className="fees-note">{t.feesNote}</p><p className="fees-fine">{t.fine}</p>
       </section>
+      <PartnerSection locale={locale}/>
     </main>
-    <footer className="site-footer"><div className="wrap footer-inner"><div><strong>MostPraca</strong><p>{t.footer}</p><p className="copyright">© {new Date().getFullYear()} MostPraca</p></div><div className="footer-links"><a href={privacyPath}>{t.privacy}</a><a href="#cookies">{t.cookies}</a><a href="#top">{t.top}</a></div></div></footer>
+    <footer className="site-footer"><div className="wrap footer-inner"><div><strong>MostPraca</strong><p>{t.footer}</p><ContactDetails/><p className="copyright">© {new Date().getFullYear()} MostPraca</p></div><div className="footer-links"><a href={privacyPath}>{t.privacy}</a><a href="#cookies">{t.cookies}</a><a href="#top">{t.top}</a></div></div></footer>
     <CookieNotice locale={locale}/>
   </div>;
 }
